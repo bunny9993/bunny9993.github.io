@@ -12,13 +12,26 @@ const showMenu = (toggleId, navId) =>{
 showMenu('nav-toggle','nav-menu')
 
 /*===== REMOVE MENU MOBILE =====*/
-const navLink = document.querySelectorAll('.nav__link')
+// const navLink = document.querySelectorAll('.nav__link')
+
+// function linkAction(){
+//     const navMenu = document.getElementById('nav-menu')
+//     navMenu.classList.remove('show')
+// }
+// navLink.forEach(n => n.addEventListener('click', linkAction))
+/*===== ACTIVE AND REMOVE MENU =====*/
+const navLink = document.querySelectorAll('.nav__link');   
 
 function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    navMenu.classList.remove('show')
+  /*Active link*/
+  navLink.forEach(n => n.classList.remove('active'));
+  this.classList.add('active');
+  
+  /*Remove menu mobile*/
+  const navMenu = document.getElementById('nav-menu')
+  navMenu.classList.remove('show')
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navLink.forEach(n => n.addEventListener('click', linkAction));
 
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
 const sections = document.querySelectorAll('section[id]')
@@ -60,6 +73,7 @@ sr.reveal('.about__subtitle', {delay: 300})
 sr.reveal('.about__profession', {delay: 400})
 sr.reveal('.about__text', {delay: 500})
 sr.reveal('.about__social-icon', {delay: 600, interval: 200})
+sr.reveal('.contact__button', {delay: 600, interval: 200})
 
 /*SCROLL SKILLS*/
 sr.reveal('.skills__subtitle', {})
@@ -73,34 +87,37 @@ sr.reveal('.portfolio__img', {interval: 200})
 sr.reveal('.contact__subtitle', {})
 sr.reveal('.contact__text', {interval: 200})
 sr.reveal('.contact__input', {delay: 400})
-sr.reveal('.contact__button', {delay: 600})
+// sr.reveal('.contact__button', {delay: 600})
 
 
-// function to set a given theme/color-scheme
-function setTheme(themeName) {
-    localStorage.setItem('theme', themeName);
-    document.documentElement.className = themeName;
-}
+// // function to set a given theme/color-scheme
+// function setTheme(themeName) {
+//     localStorage.setItem('theme', themeName);
+//     document.documentElement.className = themeName;
+// }
 
-// function to toggle between light and dark theme
-function toggleTheme() {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-light');
-    } else {
-        setTheme('theme-dark');
-    }
-}
+// // function to toggle between light and dark theme
+// function toggleTheme() {
+//     if (localStorage.getItem('theme') === 'theme-dark') {
+//         setTheme('theme-light');
+//     } else {
+//         setTheme('theme-dark');
+//     }
+// }
 
-// Immediately invoked function to set the theme on initial load
-(function () {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-dark');
-        document.getElementById('slider').checked = false;
-    } else {
-        setTheme('theme-light');
-      document.getElementById('slider').checked = true;
-    }
-})();
+// // Immediately invoked function to set the theme on initial load
+// (function () {
+//     if (localStorage.getItem('theme') === 'theme-dark') {
+//         setTheme('theme-dark');
+//         document.getElementById('slider').checked = false;
+//     } else {
+//         setTheme('theme-light');
+//       document.getElementById('slider').checked = true;
+//     }
+// })();
+
+//Theme
+// const Theme
 
 
 
